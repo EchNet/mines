@@ -1,0 +1,33 @@
+#!/bin/ksh
+#
+# Build/deploy the MINES project.
+#
+
+set -e
+export ROOT=c:/home/ech.net/project/mines
+export TOMCAT=c:/tomcat5
+
+DO_DEPLOY=""
+DO_RELEASE=""
+
+for i in $*
+do
+    [ "$i" = "deploy" ] && DO_DEPLOY=1
+    [ "$i" = "-deploy" ] && DO_DEPLOY=1
+    [ "$i" = "-d" ] && DO_DEPLOY=1
+
+    [ "$i" = "release" ] && DO_RELEASE=1
+    [ "$i" = "-release" ] && DO_RELEASE=1
+    [ "$i" = "-r" ] && DO_RELEASE=1
+    echo $i > /dev/null   # make Cygwin ksh happy?
+done
+
+if [ ! "$DO_DEPLOY" -a ! "$DO_RELEASE" ]
+then
+    DO_DEPLOY=1
+fi
+
+. $ROOT/scripts/setup.sh
+[ "$DO_DEPLOY" ] && . $ROOT/scripts/deploy.sh
+[ "$DO_RELEASE" ] && . $ROOT/scripts/release.sh
+

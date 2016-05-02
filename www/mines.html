@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>Minesweeper!</title>
+<link rel="StyleSheet" type="text/css" href="mines.css">
+<style type="text/css">
+*.appletDiv {
+}
+</style>
+</head>
+<body>
+<div class="all">
+<h1>
+&nbsp;<img src="happy.png" width="26" height="26">
+&nbsp;Minesweeper!
+&nbsp;<img src="sad.png" width="26" height="26">
+</h1>
+<div class="content">
+<!-- end of header -->
+
+<div id="appletDiv" class="appletDiv">
+<applet code="MinesApplet" width="504" height="323">
+<param name="rows" value="16">
+<param name="columns" value="30">
+<param name="nmines" value="99">
+You can't play without Java.  <a href="http://www.java.com">Get Java!</a>
+</applet>
+</div>
+<br>
+<!-- start of footer -->
+<hr>
+<div style="text-align:center">
+<small>
+<a class="linktab" href="instructions.html">How to Play</a> ~
+ALL CONTENT (C) 2006 BY JAMES ECHMALIAN.
+</small>
+</div>
+</div>
+</div>
+</body>
+<script type="text/javascript" language="javascript">
+
+// Traditional settings...
+// Easy: r8 c8 n10
+// Medium: r16 c16 n20
+// Hard: r16 c30 n99
+
+var rows = 16;
+var columns = 16;
+var nmines = 12;
+var marksQ = false;
+
+if (window.location.search.length > 0)
+{
+    var index;
+
+    index = window.location.search.indexOf("r=");
+    if (index > 0)
+    {
+        rows = parseInt(window.location.search.substring(index + 2));
+    }
+
+    index = window.location.search.indexOf("c=");
+    if (index > 0)
+    {
+        columns = parseInt(window.location.search.substring(index + 2));
+    }
+
+    index = window.location.search.indexOf("n=");
+    if (index > 0)
+    {
+        nmines = parseInt(window.location.search.substring(index + 2));
+    }
+    else
+    {
+        nmines = Math.floor(rows * columns / 6);
+    }
+
+    document.getElementById("appletDiv").innerHTML =
+        "<applet code=\"MinesApplet\" width=\"" + calcWidth() + "\" " +
+        "height=\"" + calcHeight() + "\">" +
+        "<param name=\"rows\" value=\"" + rows + "\">" +
+        "<param name=\"columns\" value=\"" + columns + "\">" +
+        "<param name=\"nmines\" value=\"" + nmines + "\">" +
+        "You can't play without Java.  <a href=\"http://www.java.com\">Get Java!</a>" +
+        "</applet>"
+}
+
+function calcWidth()
+{
+    return (16 * columns) + 24;
+}
+
+function calcHeight()
+{
+    return (16 * rows) + 67;
+}
+</script>
+</html>

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<project name="mines" default="build">
+
+    <property name="project.name" value="${ant.project.name}" />
+    <property name="version" value="1.0"/>
+    <property name="antlib" location="../../antlib"/>
+
+    <import file="${antlib}/local-settings.xml" />
+
+    <property name="output.dir" value="${build.root.dir}/${project.name}"/>
+    <property name="output.jar" value="${output.dir}/${project.name}-${version}.jar"/>
+    <property name="classes.flag" value="${output.dir}/${project.name}.classes"/>
+
+
+    <target name="build" description="build" depends="init,classes,jar"/>
+
+    <target name="init">
+        <mkdir dir="${output.dir}/classes"/>
+    </target>
+
+    <target name="classes" depends="classes-check" unless="classes-uptodate">
+        <javac destdir="${output.dir}/classes"
+                includeantruntime="false">
+            <src path="java"/>
+        </javac>
+        <touch file="${classes.flag}"/>
+    </target>
+
+    <target name="classes-check">
+        <uptodate property="classes-uptodate" targetfile="${classes.flag}">
+            <srcfiles dir="java" includes="**/*.java" />
+        </uptodate>
+    </target>
+
+    <target name="jar" depends="jar-check" unless="jar-uptodate">
+        <jar destfile="${output.jar}">
+            <fileset dir="${output.dir}/classes"/>
+        </jar>
+    </target>
+
+    <target name="jar-check">
+        <uptodate property="jar-uptodate" targetfile="${output.jar}">
+            <srcfiles dir="${output.dir}/classes" includes="**/*" />
+        </uptodate>
+    </target>
+
+    <target name="clean" description="clean">
+        <delete dir="${output.dir}"/>
+    </target>
+  
+</project>

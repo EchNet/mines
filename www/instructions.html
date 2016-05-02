@@ -1,0 +1,165 @@
+<html>
+<head>
+<title>Minesweeper!</title>
+<link rel="StyleSheet" type="text/css" href="mines.css">
+<script type="text/javascript" language="javascript" src="mines.js">
+</script>
+</head>
+<body>
+<div class="all">
+<h1>
+&nbsp;<img src="happy.png" width="26" height="26">
+&nbsp;Minesweeper!
+&nbsp;<img src="sad.png" width="26" height="26">
+</h1>
+<div class="content">
+<!-- end of header -->
+
+<!-- Card 1 -->
+
+<div class="card" id="c1">
+<table width="100%" cellspacing="15" cellpadding="15"><tbody><tr>
+<td width="152" height="300">
+<img src="start.png" width="152" height="195">
+</td>
+<td>
+<h3>Playing Minesweeper</h3>
+The game board is a grid of squares.  At the start of the game, all of the
+squares are covered.  Some of the squares contain hidden mines! 
+<br><br>
+<em>Your challenge
+is to uncover all of the squares that do not contain mines, leaving all
+of the mines covered.</em>
+<br><br>
+To uncover a square, click on it with the left mouse button.
+</td>
+</tr></tbody></table>
+</div>
+
+<!-- Card 2 -->
+
+<div class="card" id="c2">
+<table width="100%" cellspacing="15" cellpadding="15"><tbody><tr>
+<td width="152" height="300">
+<img src="loss.png" width="152" height="195">
+</td>
+<td>
+<h3>Watch Out For Mines</h3>
+<br>
+Beware! if you click on a mined square, the game is over!
+<br><br><br>
+To start a new game, click on the yellow face at the top of the board.
+</td>
+</tr></tbody></table>
+</div>
+
+<!-- Card 3 -->
+
+<div class="card" id="c3">
+<table width="100%" cellspacing="15" cellpadding="15"><tbody><tr>
+<td width="152" height="300">
+<img src="working.png" width="152" height="195">
+</td>
+<td>
+<h3>Locating Mines</h3>
+An uncovered square that does not contain a mine either contains a
+number or is blank.  If the square contains a
+number, it represents the number of adjacent squares that are mined.
+There are eight adjacent positions: top, bottom, left, right, top left,
+top right, bottom left, bottom right.
+If the square is blank, there are no adjacent mines.  The game automatically
+uncovers all of the adjacent positions in this case.
+Use the numbers on the uncovered squares and a bit of
+logic to detect the positions of the mines!
+</td>
+</tr></tbody></table>
+</div>
+
+<!-- Card 4 -->
+
+<div class="card" id="c4">
+<table width="100%" cellspacing="15" cellpadding="15"><tbody><tr>
+<td width="152" height="300">
+<img src="working.png" width="152" height="195">
+</td>
+<td>
+<h3>Marking Squares</h3>
+When you locate a mine, click on it with the right mouse button to flag it.
+(Mac users: <a href="http://www.macinstruct.com/node/66" target="_new">read this</a>)
+When you click on a covered square with the right mouse button, you
+rotate its display through three states: clear, flagged and question-marked.
+If you accidentally left-click a flagged square, the game does not uncover it!
+The question mark has no special function and is there to use as you see fit.
+</td>
+</tr></tbody></table>
+</div>
+
+<!-- Card 5 -->
+
+<div class="card" id="c5">
+<table width="100%" cellspacing="15" cellpadding="15">
+<tbody>
+<tr>
+<td width="152" height="300">
+<img src="win.png" width="152" height="195">
+</td>
+<td>
+<h3>Making the Grade</h3>
+When you uncover the last unmined square,
+the game is over and you win!
+<br><br>
+The ticking counter in the upper right corner of the board shows your playing 
+time in seconds.  The object is to win the game in as little time as possible.
+The lower the number in the upper right corner when you win, the better.
+</td>
+</tr></tbody></table>
+</div>
+
+<!-- Card 6 -->
+
+<div class="card" id="c6">
+<table width="100%" cellspacing="15" cellpadding="15"><tbody><tr>
+<td>
+<h3>Clearing around squares:</h3>
+If a square is uncovered, you may quickly uncover all unflagged adjacent
+squares by clicking
+<em>both the left and right mouse buttons on the square simultaneously.</em>
+Use this valuable shortcut to reduce your time and improve your score.
+Flag the squares that you know are mined.  When you believe that all
+the mined squares adjacent to an uncovered square are flagged, 
+clear the remaining squares in one stroke, rather than uncovering each 
+one by one...
+but beware - if you have flagged a square incorrectly,
+you will uncover a mine!
+</td>
+<td>
+<h3>Using the Mine Counter</h3>
+The counter in the upper left corner of the board shows the number of squares
+left to flag.  At the start of the game, the number equals the number of 
+mines on the board.  The number is reduced by one whenever you flag a square.
+Notice that the counter only counts flags; it does not tell you whether you
+have correctly flagged mined squares!
+<h3>
+The First Click:
+</h3>
+The first square you uncover is never mined.  Use this knowledge to your
+advantage!
+</td>
+</tr></tbody></table>
+</div>
+
+<div style="text-align: center;" >
+<a href="mines.html">Click to Start</a>
+</div>
+
+<!-- start of footer -->
+<hr>
+<div style="text-align:center">
+<small>
+ALL CONTENT (C) 2006 BY JAMES ECHMALIAN.
+</small>
+</div>
+</div>
+</div>
+</body>
+</html>
